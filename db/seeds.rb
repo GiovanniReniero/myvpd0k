@@ -24,32 +24,49 @@ require "json"
   # 
 # end
 
+def ingredients
+  30.times do
+    @ingredient = Ingredient.new(
+      name: Faker::Food.vegetables
+    )
+    @ingredient.save
+  end
+end
+
 def seeder
   rating = (1..5).to_a.sample
   n=1
   while n<11
     @recipe = Recipe.new(
       name: "pasta_dish #{n}",
-      instructions: Faker::Quotes::Shakespeare.hamlet_quote
+      instructions: Faker::Food.description
     )
+    @recipe.save
     
     @review = Review.new(
       rating: "#{rating}",
       comment: Faker::Lorem.paragraph_by_chars 
       )
-      @review.recipe = @recipe 
-      @recipe.save
+      @review.recipe = @recipe
       @review.save
       n+=1
   end
 
-  20.times do
-    @ingredient = Ingredient.new(
-      name: Faker::Food.ingredient
-    )
-    @ingredient.save
-  end
+  ingredients 
+  
+  @ingredients = Ingredient.all 
+  @recipes = Recipe.all
 
+  @recipes.each do |recipe|
+    3.times do
+      @quantity = Quantity.new(
+      quantity: Faker::Food.measurement
+      )
+      @quantity.recipe = recipe
+      @quantity.ingredient = @ingredients.sample
+      @quantity.save
+    end
+  end
 end
 
 
@@ -62,9 +79,8 @@ seeder
 puts "Seeding locally.... #{Recipe.count} recipe seeds"
 puts "Seeding locally.... #{Review.count} review seeds"
 puts "Seeding locally.... #{Ingredient.count} ingredient seeds"
-# puts "Seeding remotely.... #{Review.count} review seeds"
-# puts "Seeding Completed!!!.... #{Ingredient.count} bookmark seeds"
-# puts "Seeding Completed!!!.... #{Quantity.count} bookmark seeds"
+puts "Seeding locally.... #{Quantity.count} quantity seeds"
+
 
 
 
