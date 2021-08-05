@@ -30,6 +30,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'dotenv', '~> 2.7', '>= 2.7.6'
 gem 'simple_form', '~> 5.1'
 gem 'faker', '~> 2.18'
+gem 'font-awesome-sass', '~> 5.6.1'
+gem 'autoprefixer-rails', '10.2.5'
+
+# gem "typedjs-rails", "~> 2.0.9"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
