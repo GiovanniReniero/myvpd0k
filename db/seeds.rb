@@ -34,6 +34,7 @@ def ingredients
 end
 
 def seeder
+  ingredients 
   rating = (1..5).to_a.sample
   n=1
   while n<11
@@ -52,11 +53,8 @@ def seeder
       n+=1
   end
 
-  ingredients 
-  
   @ingredients = Ingredient.all 
   @recipes = Recipe.all
-
   @recipes.each do |recipe|
     3.times do
       @quantity = Quantity.new(
