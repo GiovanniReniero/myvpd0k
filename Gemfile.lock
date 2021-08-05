@@ -69,6 +69,8 @@ GEM
     crass (1.0.6)
     dotenv (2.7.6)
     erubi (1.10.0)
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     globalid (0.5.1)
       activesupport (>= 5.0)
@@ -182,6 +184,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   dotenv (~> 2.7, >= 2.7.6)
+  faker (~> 2.18)
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
@@ -199,4 +202,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.24
+   2.2.25
