@@ -37,10 +37,11 @@ def seeder
   ingredients 
   rating = (1..5).to_a.sample
   n=1
-  while n<11
+  while n<10
     @recipe = Recipe.new(
       name: "pasta_dish #{n}",
-      instructions: Faker::Food.description
+      instructions: Faker::Food.description,
+      description: Faker::Lorem.paragraph
     )
     @recipe.save
     
