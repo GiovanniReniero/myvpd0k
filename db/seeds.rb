@@ -41,7 +41,8 @@ def seeder
     @recipe = Recipe.new(
       name: "pasta_dish #{n}",
       instructions: Faker::Food.description,
-      description: Faker::Lorem.paragraph
+      description: Faker::Lorem.paragraph,
+      photo_url: "/images/spag_#{n}.jpg"
     )
     @recipe.save
     
