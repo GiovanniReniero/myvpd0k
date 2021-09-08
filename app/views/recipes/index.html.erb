@@ -50,10 +50,10 @@
     <div class="cards_box mt-5 ">
       <% @recipes.each do |recipe| %>
         <div class="card rounded-3" style="height: 360px;">
-           <%= image_pack_tag "media#{recipe. photo_url}", class:"card-img-top", alt: ". .."  %> 
+           <%= image_pack_tag "media#{recipe.photo_url}", class:"card-img-top", alt: ". .."  %> 
           <div class="card-body">
             <h5 class="card-title"><%= recipe.name  %></h5>
-            <p class="card-text"> <%= recipe. description %> </p>
+            <p class="card-text"> <%= recipe.description %> </p>
                <%= link_to "Find out more", recipe_path(recipe.id), class: "btn btn-warning button"%>
           </div>
         </div>

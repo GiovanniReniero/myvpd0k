@@ -1,1 +1,32 @@
-<h2>This is the show page</h2>
+<!-- This is the show page -->
+
+<%= image_pack_tag "media#{@recipe.photo_url}", class:"card-img-top", alt: ""  %> 
+<div class="container">
+  <br>
+  <h2><%= @recipe.name %></h2>
+  <br>
+  <h3>Reviews</h3>
+  <p></p>
+  <% reviews= @recipe.reviews %>
+  <% if @recipe.reviews.count != 0 %>
+    <% reviews.each do |review| %>
+      <h5><%= review.comment %></h5>
+      <h4> <%= "⭐" * review.rating %></h4>
+      <br>
+    <% end %>
+  <% else %>
+    <h5><%=  "No reviews yet for this recipe" %></h5>   
+  <% end %>
+
+  <h3>Ingredients</h3>
+
+  <h3>Instructions</h3>
+  <h5><%= @recipe.instructions %></h5>
+  <br>
+  <br>
+  <%= link_to "Back to recipe list", root_path, class: "btn btn-warning button"%>
+</div>
+
+
+
+
