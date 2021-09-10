@@ -19,7 +19,20 @@
   <% end %>
 
   <h3>Ingredients</h3>
+  <% quantities = @recipe.quantities %>
+  <% ingredients = @recipe.ingredients %>  
+  <ul>
+  <%  quantities.each do |quantity| %>
+   <li> 
+      <% ingredient_id = quantity.ingredient_id%>
+      <span>
+        <h5><%= "#{quantity.quantity} of " %>
+        <%= ingredients.find(ingredient_id).name %></h5>
+       </span>
+  </li>
 
+  <% end %> 
+  </ul>
   <h3>Instructions</h3>
   <h5><%= @recipe.instructions %></h5>
   <br>
