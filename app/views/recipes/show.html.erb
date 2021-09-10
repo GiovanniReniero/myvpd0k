@@ -1,12 +1,11 @@
 <!-- This is the show page -->
 
-<%= image_pack_tag "media#{@recipe.photo_url}", class:"card-img-top", alt: ""  %> 
+<%= image_pack_tag "media#{@recipe.photo_url}", class:"card-img-top show-image", alt:"..."  %> 
 <div class="container">
   <br>
   <h2><%= @recipe.name %></h2>
   <br>
   <h3>Reviews</h3>
-  <p></p>
   <% reviews= @recipe.reviews %>
   <% if @recipe.reviews.count != 0 %>
     <% reviews.each do |review| %>
@@ -30,8 +29,8 @@
         <%= ingredients.find(ingredient_id).name %></h5>
        </span>
   </li>
-
-  <% end %> 
+  <% end %>
+  <br> 
   </ul>
   <h3>Instructions</h3>
   <h5><%= @recipe.instructions %></h5>

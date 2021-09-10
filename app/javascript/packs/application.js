@@ -17,7 +17,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-console.log ("Porca puttana da wuanto tempo non scrivo un poco de JvaScript")
 
 
 document.addEventListener('turbolinks:load', () => {
